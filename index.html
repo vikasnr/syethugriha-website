@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Syethugriha (Syeaura Interior &amp; Construction), Bangalore: home interiors, modular kitchens and wardrobes, renovation, custom furniture and 3D design.">
+<title>Syethugriha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: sticky ivory header, full-bleed photo hero, 1320px container, ivory and forest bands alternate; project pages open as a full-screen layer */
+:root{
+  --ivory:#F5F1EA; --sand:#EAE3D8; --line:#DDD3C5;
+  --ink:#2B2723; --stone:#5E574F; --body:#4F4842;
+  --forest:#2F3B32; --forest-2:#3A483D; --brass:#7D5F36; --brass-lt:#DCC59B;
+  --on-dark:#F5F1EA; --on-dark-2:#D8D2C6;
+  --f-display:'Cormorant Garamond', 'Cormorant', Georgia, 'Times New Roman', serif;
+  --f-text:'Jost', 'Futura', 'Century Gothic', system-ui, sans-serif;
+  --max:1320px; --sec:clamp(72px, 9vw, 120px);
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:92px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important; transition:none!important}}
+body{background:var(--ivory); color:var(--ink); font-family:var(--f-text); font-size:16px; line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); overflow-x:hidden}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); z-index:60; background:var(--ivory)}
+body.locked{overflow:hidden}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+button{font:inherit; color:inherit; cursor:pointer}
+:focus-visible{outline:2px solid var(--brass); outline-offset:3px}
+.bleed{margin-left:calc(-1 * max(16px, env(safe-area-inset-left, 0px))); margin-right:calc(-1 * max(16px, env(safe-area-inset-right, 0px)))}
+.wrap{max-width:var(--max); margin:0 auto; padding-inline:clamp(0px, 3vw - 8px, 24px)}
+.bleed > .wrap{padding-left:max(16px, env(safe-area-inset-left, 0px), clamp(16px, 4vw, 40px)); padding-right:max(16px, env(safe-area-inset-right, 0px), clamp(16px, 4vw, 40px))}
+.eyebrow{font-size:12.5px; letter-spacing:.26em; text-transform:uppercase; color:var(--brass); margin:0}
+.dark .eyebrow{color:var(--brass-lt)}
+h1,h2,h3{font-family:var(--f-display); font-weight:500; margin:0; text-wrap:balance; line-height:1.04}
+h2{font-size:clamp(36px, 4.6vw, 56px)}
+h3{font-size:clamp(26px, 2.6vw, 34px)}
+p{margin:0}
+.lede{font-size:17px; font-weight:300; line-height:1.75; color:var(--body); max-width:60ch}
+.dark{background:var(--forest); color:var(--on-dark)}
+.dark .lede{color:var(--on-dark-2)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:0 26px; font-size:13px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; border:1px solid transparent; transition:background .2s, color .2s, border-color .2s}
+.btn-primary{background:var(--forest); color:var(--on-dark)}
+.btn-primary:hover{background:var(--ink)}
+.btn-light{background:var(--ivory); color:var(--ink)}
+.btn-light:hover{background:var(--sand)}
+.btn-ghost{border-color:currentColor; background:transparent}
+.btn-ghost:hover{background:rgba(245,241,234,.12)}
+.tlink{font-size:13px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; border-bottom:1px solid currentColor; padding-bottom:5px; align-self:flex-start}
+.tlink:hover{color:var(--brass)}
+.arrow{width:16px; height:10px; flex:none}
+.sec-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:40px}
+.sec-head > div:first-child{display:flex; flex-direction:column; gap:14px; min-width:0}
+
+/* Header */
+.hdr{position:sticky; top:env(safe-area-inset-top, 0px); z-index:50; background:var(--ivory); border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:84px}
+.logo img{height:58px; width:auto; mix-blend-mode:multiply}
+.nav{display:flex; align-items:center; gap:0; margin:0; padding:0}
+.nav > li{position:relative; list-style:none}
+.nav ul{margin:0; padding:0}
+.nav-top{display:flex; align-items:center; gap:7px; min-height:44px; padding:0 10px; white-space:nowrap; background:none; border:0; font-size:12.5px; font-weight:500; letter-spacing:.14em; text-transform:uppercase}
+.nav-top:hover, .nav > li.open > .nav-top{color:var(--brass)}
+.nav-top svg{transition:transform .2s}
+.nav > li.open > .nav-top svg{transform:rotate(180deg)}
+.drop{position:absolute; left:0; top:100%; min-width:260px; background:var(--ivory); border:1px solid var(--line); box-shadow:0 18px 40px rgba(43,39,35,.12); padding:10px 0; list-style:none; opacity:0; visibility:hidden; transform:translateY(6px); transition:opacity .18s, transform .18s, visibility .18s}
+.nav > li.open .drop{opacity:1; visibility:visible; transform:none}
+.drop a{display:flex; flex-direction:column; padding:10px 20px; font-size:15px}
+.drop a small{font-size:12.5px; color:var(--stone)}
+.drop a:hover{background:var(--sand)}
+.hdr-cta .btn{white-space:nowrap}
+.hdr-cta{display:flex; align-items:center; gap:8px}
+.burger{display:none; width:48px; height:48px; border:0; background:none; align-items:center; justify-content:center}
+@media (max-width: 1260px){ .nav{display:none} .burger{display:flex} .hdr-cta .btn{display:none} .logo img{height:46px} .hdr .wrap{min-height:68px} }
+
+/* Drawer */
+.scrim{position:fixed; inset:0; background:rgba(20,22,19,.5); z-index:70; opacity:0; visibility:hidden; transition:opacity .25s, visibility .25s}
+.drawer{position:fixed; top:0; bottom:0; left:0; width:min(340px, 88vw); z-index:71; background:var(--forest); color:var(--on-dark); display:flex; flex-direction:column; transform:translateX(-102%); transition:transform .3s ease;
+  padding-top:env(safe-area-inset-top, 0px); padding-bottom:env(safe-area-inset-bottom, 0px); padding-left:env(safe-area-inset-left, 0px)}
+.drawer-open .scrim{opacity:1; visibility:visible}
+.drawer-open .drawer{transform:none}
+.drawer-head{display:flex; align-items:center; justify-content:space-between; padding:14px 12px 14px 24px; border-bottom:1px solid rgba(245,241,234,.15)}
+.drawer-head span{font-family:var(--f-display); font-size:28px}
+.icon-btn{width:48px; height:48px; border:0; background:none; display:flex; align-items:center; justify-content:center}
+.dnav{list-style:none; margin:0; padding:8px 0; overflow-y:auto; flex:1}
+.dnav > li > a, .dnav > li > button{display:flex; justify-content:space-between; align-items:center; width:100%; min-height:56px; padding:0 24px; background:none; border:0; text-align:left; font-size:14.5px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--on-dark)}
+.dnav button svg{transition:transform .2s}
+.dnav li.open > button{color:var(--brass-lt)}
+.dnav li.open > button svg{transform:rotate(180deg)}
+.dsub{list-style:none; margin:0; padding:0 0 10px 40px; display:none}
+.dnav li.open .dsub{display:block}
+.dsub a{display:flex; align-items:center; min-height:44px; color:var(--on-dark-2); font-size:15px}
+.drawer-foot{padding:20px 24px 24px; display:flex; flex-direction:column; gap:12px; border-top:1px solid rgba(245,241,234,.15)}
+.drawer-foot .btn{width:100%}
+
+/* Hero */
+.hero{position:relative; height:clamp(560px, 72vw, 760px); max-height:820px; overflow:hidden; background:var(--ink)}
+.slide{position:absolute; inset:0; opacity:0; transition:opacity 1.2s ease}
+.slide.on{opacity:1}
+.slide img{width:100%; height:100%; object-fit:cover; transform:scale(1.04); transition:transform 7s ease}
+.slide.on img{transform:scale(1)}
+.hero::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(26,28,24,.84) 0%, rgba(26,28,24,.55) 48%, rgba(26,28,24,.08) 100%); pointer-events:none}
+.hero .wrap{position:relative; z-index:2; height:100%; display:flex; flex-direction:column; justify-content:center; gap:26px; color:var(--on-dark)}
+.hero .eyebrow{color:var(--brass-lt)}
+.hero h1{font-size:clamp(46px, 6.4vw, 86px); line-height:.98; max-width:14ch}
+.hero .lede{color:#EDE6DA; max-width:34em}
+.hero-ctas{display:flex; gap:12px; flex-wrap:wrap; margin-top:6px}
+.hero-ctrl{position:absolute; z-index:3; bottom:28px; right:max(16px, env(safe-area-inset-right, 0px), clamp(16px, 4vw, 40px)); display:flex; align-items:center; gap:16px; color:var(--on-dark)}
+.hero-cap{font-size:12px; letter-spacing:.18em; text-transform:uppercase; opacity:.85}
+.dots{display:flex; gap:4px}
+.dots button{width:44px; height:44px; border:0; background:none; display:flex; align-items:center; justify-content:center; padding:0}
+.dots button span{display:block; width:28px; height:2px; background:rgba(245,241,234,.4); transition:background .2s}
+.dots button[aria-current="true"] span{background:var(--on-dark)}
+@media (max-width: 640px){ .hero::after{background:linear-gradient(0deg, rgba(26,28,24,.9) 0%, rgba(26,28,24,.45) 60%, rgba(26,28,24,.15) 100%)} .hero .wrap{justify-content:flex-end; padding-bottom:96px} .hero-cap{display:none} .hero-ctrl{left:max(16px, env(safe-area-inset-left, 0px)); right:auto} }
+
+/* Story */
+.story{padding-block:var(--sec); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:clamp(32px, 6vw, 72px); align-items:center}
+.story > div{display:flex; flex-direction:column; gap:20px; min-width:0}
+.kannada{font-family:var(--f-display); font-size:22px; color:var(--brass)}
+
+/* Services */
+.services{padding-bottom:var(--sec)}
+.svc-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap:24px}
+.svc{display:flex; flex-direction:column; gap:16px; text-align:left; background:none; border:0; padding:0}
+.svc .ph{aspect-ratio:4/5; overflow:hidden; max-width:100%; background:var(--sand)}
+.svc .ph img{width:100%; height:100%; object-fit:cover; transition:transform .7s ease}
+.svc:hover .ph img{transform:scale(1.04)}
+.svc-t{display:flex; justify-content:space-between; align-items:baseline}
+.svc-t span:first-child{font-family:var(--f-display); font-size:32px}
+.svc-t span:last-child{font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--brass)}
+.svc p{font-size:15px; color:var(--stone)}
+
+/* Projects */
+.projects{padding-block:var(--sec)}
+.chips{display:flex; gap:8px; flex-wrap:wrap}
+.chip{min-height:44px; padding:0 18px; border:1px solid rgba(245,241,234,.4); background:transparent; color:var(--on-dark); font-size:12px; letter-spacing:.14em; text-transform:uppercase}
+.chip:hover{border-color:var(--on-dark)}
+.chip[aria-pressed="true"]{background:var(--on-dark); color:var(--forest); border-color:var(--on-dark)}
+.pgrid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:28px}
+.pcard{display:flex; flex-direction:column; gap:14px; text-align:left; background:none; border:0; padding:0; color:var(--on-dark)}
+.pcard .ph{aspect-ratio:4/3; overflow:hidden; position:relative; max-width:100%}
+.pcard .ph img{width:100%; height:100%; object-fit:cover; transition:transform .7s ease}
+.pcard:hover .ph img{transform:scale(1.04)}
+.pcard .count{position:absolute; left:14px; bottom:14px; background:rgba(26,28,24,.72); color:var(--on-dark); font-size:12px; letter-spacing:.14em; text-transform:uppercase; padding:6px 10px}
+.pmeta{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--brass-lt)}
+.pcard h3{font-size:34px}
+.pcard .lede{font-size:15px}
+.pview{display:inline-flex; align-items:center; gap:10px; font-size:13px; letter-spacing:.16em; text-transform:uppercase}
+.pcard:hover .pview{color:var(--brass-lt)}
+.empty{border:1px dashed rgba(245,241,234,.35); padding:48px 28px; display:flex; flex-direction:column; gap:16px; align-items:flex-start}
+.empty h3{font-size:30px}
+
+/* Process */
+.process{padding-block:var(--sec)}
+.steps{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top:1px solid var(--line)}
+.steps li{padding:28px 24px 8px 0; display:flex; flex-direction:column; gap:10px; position:relative}
+.steps li::before{content:""; position:absolute; top:-1px; left:0; width:0; height:2px; background:var(--brass); transition:width .5s ease}
+.steps li:hover::before{width:calc(100% - 24px)}
+.steps .n{font-family:var(--f-display); font-size:44px; color:var(--brass); line-height:1; font-variant-numeric:lining-nums}
+.steps b{font-size:17px; font-weight:500}
+.steps span{font-size:15px; color:var(--stone)}
+.faq{margin-top:64px; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:clamp(24px, 5vw, 64px)}
+.faq h3{font-size:36px}
+.faq-list{display:flex; flex-direction:column; min-width:0}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; min-height:64px; font-size:17px; font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary svg{flex:none; transition:transform .2s}
+details[open] summary svg{transform:rotate(45deg)}
+details p{padding-bottom:20px; color:var(--body); font-weight:300; max-width:60ch}
+
+/* Experience */
+.exp{background:var(--sand); padding-block:var(--sec)}
+.exp-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap:clamp(32px, 6vw, 64px); align-items:center}
+.exp-grid > div{display:flex; flex-direction:column; gap:20px; min-width:0}
+.vid{position:relative; aspect-ratio:16/9; background:var(--ink); overflow:hidden; max-width:100%}
+.vid video, .vid img{width:100%; height:100%; object-fit:cover}
+.play{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:88px; height:88px; border-radius:50%; border:0; background:rgba(245,241,234,.94); display:flex; align-items:center; justify-content:center; transition:transform .2s}
+.play:hover{transform:translate(-50%, -50%) scale(1.06)}
+.vid-cap{position:absolute; left:18px; bottom:14px; color:var(--on-dark); font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.vid.playing .play, .vid.playing .vid-cap, .vid.playing img{display:none}
+.addr{display:grid; grid-template-columns:auto 1fr; gap:6px 18px; font-size:15px; color:var(--body)}
+.addr dt{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass); padding-top:3px}
+.addr dd{margin:0}
+
+/* Rooms gallery */
+.rooms{padding-top:var(--sec)}
+.tabs{display:flex; gap:4px 22px; flex-wrap:wrap}
+.tab{min-height:44px; background:none; border:0; border-bottom:1px solid transparent; padding:0; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--stone)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--ink)}
+.rgrid{display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); grid-auto-rows:clamp(150px, 17vw, 240px); gap:14px}
+.rgrid button{border:0; padding:0; background:var(--sand); overflow:hidden; position:relative}
+.rgrid button img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease}
+.rgrid button:hover img{transform:scale(1.05)}
+.rgrid button:first-child{grid-column:span 2; grid-row:span 2}
+.rgrid .tag{position:absolute; left:10px; bottom:10px; background:rgba(245,241,234,.92); color:var(--ink); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; padding:5px 9px}
+@media (max-width: 700px){ .rgrid{grid-template-columns:repeat(2, minmax(0, 1fr))} }
+
+/* Blog */
+.blog{padding-block:var(--sec)}
+.bgrid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:32px}
+.bcard{display:flex; flex-direction:column; gap:12px; background:none; border:0; padding:0; text-align:left}
+.bcard .ph{aspect-ratio:3/2; overflow:hidden; max-width:100%}
+.bcard .ph img{width:100%; height:100%; object-fit:cover; transition:transform .6s}
+.bcard:hover .ph img{transform:scale(1.04)}
+.bcard .k{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass)}
+.bcard h3{font-size:28px; line-height:1.18}
+.bcard:hover h3{color:var(--brass)}
+
+/* Consult */
+.consult{padding-block:var(--sec)}
+.cgrid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap:clamp(32px, 6vw, 72px)}
+.cgrid > div{display:flex; flex-direction:column; gap:20px; min-width:0}
+.contacts{display:flex; flex-direction:column; gap:12px; margin-top:8px; font-size:16px}
+.contacts div{display:flex; gap:12px; align-items:center}
+form{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; align-content:start}
+.f{display:flex; flex-direction:column; gap:8px; min-width:0}
+.f.full{grid-column:1 / -1}
+.f label{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--on-dark-2)}
+.f input, .f select{font:inherit; font-size:16px; min-height:52px; padding:0 14px; background:var(--forest); border:1px solid rgba(245,241,234,.45); color:var(--on-dark); border-radius:0; width:100%}
+.f input:focus, .f select:focus{outline:none; border-color:var(--brass-lt)}
+.f input[aria-invalid="true"]{border-color:#E8A38A}
+.err{font-size:13px; color:#F1B9A4; min-height:0}
+.seg{display:flex; flex-wrap:wrap; gap:8px}
+.seg label{position:relative; text-transform:none; letter-spacing:0; font-size:15px; color:var(--on-dark)}
+.seg input{position:absolute; opacity:0; pointer-events:none}
+.seg span{display:flex; align-items:center; min-height:44px; padding:0 16px; border:1px solid rgba(245,241,234,.4); cursor:pointer}
+.seg input:checked + span{background:var(--on-dark); color:var(--forest); border-color:var(--on-dark)}
+.seg input:focus-visible + span{outline:2px solid var(--brass-lt); outline-offset:2px}
+form .btn{grid-column:1 / -1; min-height:56px}
+.done{grid-column:1 / -1; border:1px solid rgba(245,241,234,.4); padding:32px; display:flex; flex-direction:column; gap:14px}
+.done h3{font-size:34px}
+.note{font-size:13px; color:var(--on-dark-2)}
+@media (max-width: 520px){ form{grid-template-columns:minmax(0, 1fr)} }
+
+/* Footer */
+footer{border-top:1px solid var(--line)}
+.fgrid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:40px; padding-block:64px 40px}
+.fgrid > div, .fgrid > nav{display:flex; flex-direction:column; gap:10px; font-size:15px}
+.fgrid .k{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--brass); margin-bottom:4px}
+.fgrid a:hover{color:var(--brass)}
+.fbot{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-block:20px 32px; border-top:1px solid var(--line); font-size:13px; color:var(--stone)}
+
+/* Project layer */
+.layer{position:fixed; inset:0; z-index:80; background:var(--ivory); overflow-y:auto; overscroll-behavior:contain; opacity:0; visibility:hidden; transition:opacity .3s, visibility .3s;
+  padding-top:env(safe-area-inset-top, 0px); padding-bottom:env(safe-area-inset-bottom, 0px); padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.layer.on{opacity:1; visibility:visible}
+.lbar{position:sticky; top:0; z-index:2; background:var(--ivory); border-bottom:1px solid var(--line)}
+.lbar .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:72px}
+.back{display:inline-flex; align-items:center; gap:10px; min-height:44px; background:none; border:0; font-size:13px; font-weight:500; letter-spacing:.14em; text-transform:uppercase}
+.back:hover{color:var(--brass)}
+.crumb{font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--stone)}
+.ph-head{padding-block:48px 36px; display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap}
+.ph-head h1{font-size:clamp(46px, 7vw, 84px)}
+.facts{margin:0; display:grid; grid-template-columns:repeat(4, auto); gap:16px 36px}
+.facts div{display:flex; flex-direction:column; gap:4px}
+.facts dt{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass)}
+.facts dd{margin:0; font-size:15px}
+@media (max-width: 640px){ .facts{grid-template-columns:repeat(2, auto)} .facts dt:nth-of-type(n){grid-row:auto} }
+.lhero{aspect-ratio:21/9; overflow:hidden; max-width:100%; border:0; padding:0; width:100%; background:var(--sand)}
+.lhero img{width:100%; height:100%; object-fit:cover}
+@media (max-width: 640px){ .lhero{aspect-ratio:4/3} }
+.lintro{padding-block:72px; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:clamp(28px, 5vw, 64px)}
+.lintro h2{font-size:clamp(30px, 3.4vw, 42px); line-height:1.12}
+.lintro > div{display:flex; flex-direction:column; gap:16px}
+.lgal{columns:3 300px; column-gap:14px}
+.lgal button{display:block; width:100%; margin:0 0 14px; border:0; padding:0; background:var(--sand); overflow:hidden; break-inside:avoid}
+.lgal button img{width:100%; height:auto; transition:transform .6s}
+.lgal button:hover img{transform:scale(1.03)}
+.lnext{padding-block:72px; display:flex; justify-content:space-between; align-items:center; gap:28px; flex-wrap:wrap}
+.lnext button{background:none; border:0; padding:0; display:flex; flex-direction:column; gap:4px; text-align:left}
+.lnext button:last-child{text-align:right}
+.lnext .k{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass)}
+.lnext .t{font-family:var(--f-display); font-size:30px}
+.lnext button:hover .t{color:var(--brass)}
+.lvid{margin-top:14px}
+
+/* Lightbox */
+dialog.lb{border:0; padding:0; margin:0; width:100vw; height:100vh; max-width:none; max-height:none; background:rgba(18,19,17,.96); color:var(--on-dark)}
+dialog.lb::backdrop{background:rgba(18,19,17,.9)}
+.lb-in{position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:72px max(64px, env(safe-area-inset-right, 0px)) 72px max(64px, env(safe-area-inset-left, 0px))}
+.lb-in img{max-width:100%; max-height:100%; object-fit:contain}
+.lb-btn{position:absolute; width:52px; height:52px; border:1px solid rgba(245,241,234,.35); background:rgba(18,19,17,.5); color:var(--on-dark); display:flex; align-items:center; justify-content:center}
+.lb-btn:hover{border-color:var(--on-dark)}
+.lb-close{top:calc(16px + env(safe-area-inset-top, 0px)); right:max(16px, env(safe-area-inset-right, 0px))}
+.lb-prev{left:max(8px, env(safe-area-inset-left, 0px)); top:50%; transform:translateY(-50%)}
+.lb-next{right:max(8px, env(safe-area-inset-right, 0px)); top:50%; transform:translateY(-50%)}
+.lb-cap{position:absolute; left:0; right:0; bottom:calc(20px + env(safe-area-inset-bottom, 0px)); text-align:center; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--on-dark-2)}
+@media (max-width: 640px){ .lb-in{padding:72px 8px 80px} .lb-prev, .lb-next{top:auto; bottom:calc(10px + env(safe-area-inset-bottom, 0px)); transform:none} .lb-cap{bottom:calc(76px + env(safe-area-inset-bottom, 0px))} }
+
+/* Article modal */
+dialog.art{border:0; padding:0; width:min(720px, calc(100vw - 32px)); max-height:calc(100vh - 48px); background:var(--ivory); color:var(--ink)}
+dialog.art::backdrop{background:rgba(20,22,19,.55)}
+.art-in{display:flex; flex-direction:column; gap:18px; padding:0 0 32px}
+.art-in img{aspect-ratio:16/8; object-fit:cover; width:100%}
+.art-in > *:not(img){margin-inline:clamp(20px, 5vw, 40px)}
+.art-in h2{font-size:clamp(30px, 4vw, 42px)}
+.art-close{position:sticky; top:0; float:right; margin:8px; background:var(--ivory); border:1px solid var(--line)}
+
+.wa{position:fixed; z-index:40; right:calc(20px + env(safe-area-inset-right, 0px)); bottom:calc(20px + env(safe-area-inset-bottom, 0px)); width:58px; height:58px; border-radius:50%; background:var(--forest); color:var(--on-dark); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(43,39,35,.25); border:0}
+.wa:hover{background:var(--ink)}
+.toast{position:fixed; z-index:90; left:50%; bottom:calc(24px + env(safe-area-inset-bottom, 0px)); transform:translate(-50%, 20px); background:var(--ink); color:var(--on-dark); padding:14px 20px; font-size:14px; opacity:0; transition:opacity .25s, transform .25s; pointer-events:none; max-width:calc(100vw - 32px)}
+.toast.on{opacity:1; transform:translate(-50%, 0)}
+.proto{background:var(--ink); color:var(--on-dark-2); font-size:12.5px; text-align:center; padding:8px 0; letter-spacing:.04em}
+
+/* Multi-page views */
+.view{display:none}
+.view.on{display:block; animation:fadein .35s ease}
+@keyframes fadein{from{opacity:.4}to{opacity:1}}
+.nav > li:hover .drop, .nav > li:focus-within .drop{opacity:1; visibility:visible; transform:none}
+.nav-top[aria-current="page"]{color:var(--brass)}
+.nav-top[aria-current="page"]::after{content:""; position:absolute; left:10px; right:10px; bottom:18px; height:1px; background:var(--brass)}
+.nav-top{position:relative}
+.drawer .dnav a[aria-current="page"]{color:var(--brass-lt)}
+.drow{display:flex; align-items:center}
+.drow > a{flex:1; display:flex; align-items:center; min-height:56px; padding:0 0 0 24px; font-size:14.5px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--on-dark)}
+.drow > button{width:56px; height:56px; background:none; border:0; color:var(--on-dark); display:flex; align-items:center; justify-content:center}
+.drow > button svg{transition:transform .2s}
+.dnav li.open .drow > button svg{transform:rotate(180deg)}
+.dnav > li > a{display:flex; align-items:center; min-height:56px; padding:0 24px; font-size:14.5px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--on-dark)}
+.phead{padding-block:clamp(48px, 7vw, 88px) clamp(36px, 5vw, 56px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:clamp(24px, 5vw, 64px); align-items:end}
+.phead > div{display:flex; flex-direction:column; gap:18px; min-width:0}
+.phead h1{font-size:clamp(48px, 7vw, 92px); line-height:.98}
+.crumbs{font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--stone); display:flex; gap:10px; flex-wrap:wrap}
+.crumbs a:hover{color:var(--brass)}
+.pbanner{aspect-ratio:21/8; overflow:hidden; max-width:100%; background:var(--sand)}
+.pbanner img{width:100%; height:100%; object-fit:cover}
+@media (max-width: 640px){ .pbanner{aspect-ratio:4/3} }
+.block{padding-block:var(--sec)}
+.block.tight{padding-top:0}
+.list2{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:0 40px; border-top:1px solid var(--line)}
+.list2 li{display:flex; flex-direction:column; gap:6px; padding:22px 0; border-bottom:1px solid var(--line)}
+.list2 b{font-weight:500; font-size:17px}
+.list2 span{color:var(--stone); font-size:15px}
+.dark .list2, .dark .list2 li{border-color:rgba(245,241,234,.18)}
+.dark .list2 span{color:var(--on-dark-2)}
+.pgrid.light .pcard{color:var(--ink)}
+.pgrid.light .pmeta{color:var(--brass)}
+.pgrid.light .pcard:hover .pview{color:var(--brass)}
+.cta-band{padding-block:clamp(56px, 7vw, 88px)}
+.cta-band .wrap{display:flex; justify-content:space-between; align-items:center; gap:28px; flex-wrap:wrap}
+.cta-band h2{max-width:18ch}
+.cta-band .row{display:flex; gap:12px; flex-wrap:wrap}
+.teaser{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap:clamp(32px, 6vw, 64px); align-items:center}
+.teaser > div{display:flex; flex-direction:column; gap:20px; min-width:0}
+.steps.mini li{padding-right:20px}
+.article{max-width:760px; margin:0 auto; padding-block:clamp(48px, 7vw, 88px); display:flex; flex-direction:column; gap:22px}
+.article h1{font-size:clamp(40px, 5.6vw, 68px)}
+.article .lede{max-width:none}
+.article img{width:100%; aspect-ratio:16/9; object-fit:cover}
+.article h2{font-size:30px; margin-top:12px}
+.map{aspect-ratio:4/3; max-width:100%; background:var(--sand); border:1px dashed var(--line); display:flex; align-items:center; justify-content:center; text-align:center; color:var(--stone); padding:24px; font-size:15px}
+.dark .chip{color:var(--on-dark)}
+.chips.light .chip{border-color:var(--line); color:var(--ink)}
+.chips.light .chip:hover{border-color:var(--ink)}
+.chips.light .chip[aria-pressed="true"]{background:var(--ink); color:var(--ivory); border-color:var(--ink)}
+
+/* Brand lockup: house mark + wordmark */
+.logo{display:inline-flex; align-items:center; gap:10px}
+.logo img{height:50px !important; width:auto; mix-blend-mode:multiply; filter:brightness(1.14) contrast(1.18)}
+html, body{margin:0}
+.wm{display:flex; flex-direction:column; line-height:1}
+.wm b{font-family:var(--f-display); font-weight:600; font-size:30px; letter-spacing:.01em; color:var(--ink)}
+.wm small{font-family:var(--f-display); font-style:italic; font-size:15px; color:var(--stone); margin-top:3px}
+@media (max-width: 1260px){ .logo img{height:40px !important} .wm b{font-size:25px} .wm small{font-size:13px} }
+/* Services */
+.svc6{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:40px 24px}
+.svc6 .svc h3{font-size:30px}
+.svc6 .svc .ph{aspect-ratio:4/3}
+.svc-index{display:flex; flex-wrap:wrap; gap:10px; padding-bottom:clamp(40px, 5vw, 64px)}
+.svc-index a{min-height:44px; display:inline-flex; align-items:center; padding:0 18px; border:1px solid var(--line); font-size:12.5px; letter-spacing:.12em; text-transform:uppercase}
+.svc-index a:hover{border-color:var(--ink)}
+.svc-row{padding-block:clamp(56px, 7vw, 96px); border-top:1px solid var(--line)}
+.svc-row.alt{background:var(--sand)}
+.svc-row .wrap{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:clamp(28px, 5vw, 64px); align-items:center}
+.svc-row.alt .ph{order:2}
+@media (max-width: 820px){ .svc-row.alt .ph{order:0} }
+.svc-row .ph{aspect-ratio:4/3; overflow:hidden; max-width:100%; background:var(--sand)}
+.svc-row .ph img{width:100%; height:100%; object-fit:cover}
+.svc-row .txt{display:flex; flex-direction:column; gap:20px; min-width:0}
+.svc-row .row{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px}
+.inc{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:0 28px; border-top:1px solid var(--line)}
+.inc li{padding:12px 0 12px 22px; border-bottom:1px solid var(--line); position:relative; font-size:15px}
+.inc li::before{content:""; position:absolute; left:0; top:21px; width:10px; height:1px; background:var(--brass)}
+.btn-ghost-dk{border-color:var(--ink); background:transparent; color:var(--ink)}
+.btn-ghost-dk:hover{background:var(--ink); color:var(--ivory)}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-down" viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 16 10"><path d="M1 5h14M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-left" viewBox="0 0 16 10"><path d="M15 5H1M5 1L1 5l4 4" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 20 20"><path d="M3 3l14 14M17 3L3 17" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 20 20"><path d="M10 3v14M3 10h14" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1112 20a8 8 0 01-4-1.1z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z M12 12a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 16"><path d="M1 1h22M1 8h22M8 15h15" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+</svg>
+<div class="proto bleed">Interactive prototype · each menu item is its own page · details in [brackets] are placeholders</div>
+
+<header class="hdr bleed" id="top">
+  <div class="wrap">
+    <a href="#home" class="logo" aria-label="Syethugriha home"><img data-img="mark" alt="" width="62" height="50"><span class="wm"><b>Syethugriha</b><small>A foundation for generation</small></span></a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li><a class="nav-top" href="#services" data-nav="services">Services <svg width="10" height="10" aria-hidden="true"><use href="#i-down"/></svg></a>
+          <ul class="drop" id="svcDrop"></ul></li>
+        <li><a class="nav-top" href="#projects" data-nav="projects">Projects <svg width="10" height="10" aria-hidden="true"><use href="#i-down"/></svg></a>
+          <ul class="drop" id="projDrop"></ul></li>
+        <li><a class="nav-top" href="#process" data-nav="process">Our Process <svg width="10" height="10" aria-hidden="true"><use href="#i-down"/></svg></a>
+          <ul class="drop">
+            <li><a href="#process">How we work<small>Five steps, start to handover</small></a></li>
+            <li><a href="#process" data-scroll="faq">Questions<small>Timelines, pricing, warranty</small></a></li>
+          </ul></li>
+        <li><a class="nav-top" href="#experience" data-nav="experience">Experience Centre</a></li>
+        <li><a class="nav-top" href="#blog" data-nav="blog">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="hdr-cta">
+      <a class="btn btn-primary" href="#consult" data-nav="consult">Book Consultation</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer" id="burger"><svg width="24" height="16" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
+  <div class="drawer-head"><span>Menu</span><button class="icon-btn" id="dclose" aria-label="Close menu"><svg width="20" height="20" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+  <ul class="dnav">
+    <li><a href="#home" data-nav="home">Home</a></li>
+    <li><div class="drow"><a href="#services" data-nav="services">Services</a><button aria-expanded="false" aria-label="Show services"><svg width="14" height="14" aria-hidden="true"><use href="#i-down"/></svg></button></div>
+      <ul class="dsub" id="svcDsub"></ul></li>
+    <li><div class="drow"><a href="#projects" data-nav="projects">Projects</a><button aria-expanded="false" aria-label="Show projects"><svg width="14" height="14" aria-hidden="true"><use href="#i-down"/></svg></button></div>
+      <ul class="dsub" id="projDsub"></ul></li>
+    <li><div class="drow"><a href="#process" data-nav="process">Our Process</a><button aria-expanded="false" aria-label="Show process links"><svg width="14" height="14" aria-hidden="true"><use href="#i-down"/></svg></button></div>
+      <ul class="dsub"><li><a href="#process">How we work</a></li><li><a href="#process" data-scroll="faq">Questions</a></li></ul></li>
+    <li><a href="#experience" data-nav="experience">Experience Centre</a></li>
+    <li><a href="#blog" data-nav="blog">Blog</a></li>
+  </ul>
+  <div class="drawer-foot">
+    <a class="btn btn-light" href="#consult">Book Consultation</a>
+    <a class="btn btn-ghost" href="#consult"><svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp us</a>
+  </div>
+</aside>
+
+<main id="main">
+
+<!-- HOME -->
+<div class="view" id="v-home">
+  <section class="hero bleed" aria-label="Featured homes">
+    <div class="slide on"><img data-img="p3-5" alt="Open dining and kitchen with marble island"></div>
+    <div class="slide"><img data-img="p2-9" alt="Living room with veena and carved display panels"></div>
+    <div class="slide"><img data-img="p1-2" alt="Contemporary duplex villa exterior"></div>
+    <div class="wrap">
+      <p class="eyebrow">Syethugriha · Syeaura Interior &amp; Construction</p>
+      <h1>A foundation for generation.</h1>
+      <p class="lede">We design and build home interiors, modular kitchens, custom furniture and renovations, made to be lived in and handed down. One team, from 3D design to handover.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-light" href="#consult">Book a free consultation</a>
+        <a class="btn btn-ghost" href="#projects">See our projects <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-ctrl">
+      <a class="hero-cap" id="heroCap" href="#pastel">The Pastel Family Home</a>
+      <div class="dots" role="group" aria-label="Choose slide">
+        <button aria-label="Slide 1" aria-current="true"><span></span></button>
+        <button aria-label="Slide 2"><span></span></button>
+        <button aria-label="Slide 3"><span></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap story">
+    <div><p class="eyebrow">Our name</p><h2>Syethu means bridge. Griha means home.</h2></div>
+    <div>
+      <p class="kannada">ಸೇತು · <i>bridge</i> &nbsp; ಗೃಹ · <i>home</i></p>
+      <p class="lede">We are the bridge between the home you imagine and the home your family will live in for years. We design every room in 3D before work begins, then our own team builds it to the drawing.</p>
+      <a class="tlink" href="#process">How we work</a>
+    </div>
+  </section>
+
+  <section class="wrap services" aria-labelledby="svc-h">
+    <div class="sec-head"><div><p class="eyebrow">Services</p><h2 id="svc-h">What we do</h2></div><a class="tlink" href="#services">All services</a></div>
+    <div class="svc6" id="homeSvc"></div>
+  </section>
+
+  <section class="projects dark bleed" aria-labelledby="proj-h">
+    <div class="wrap">
+      <div class="sec-head"><div><p class="eyebrow">Projects</p><h2 id="proj-h">Homes we've brought to life</h2></div><a class="tlink" href="#projects" style="color:var(--on-dark)">View all projects</a></div>
+      <div class="pgrid" data-projects="heritage,duplex,pastel"></div>
+    </div>
+  </section>
+
+  <section class="wrap block" aria-labelledby="hp-h">
+    <div class="sec-head"><div><p class="eyebrow">Our process</p><h2 id="hp-h">Five steps. One team.</h2></div><a class="tlink" href="#process">See the full process</a></div>
+    <ol class="steps mini">
+      <li><span class="n">1</span><b>Consultation</b></li><li><span class="n">2</span><b>Design &amp; 3D</b></li><li><span class="n">3</span><b>Materials &amp; quote</b></li><li><span class="n">4</span><b>Execution</b></li><li><span class="n">5</span><b>Handover</b></li>
+    </ol>
+  </section>
+
+  <section class="exp bleed" aria-labelledby="he-h">
+    <div class="wrap teaser">
+      <a class="vid" href="#experience" aria-label="Go to Experience Centre"><img data-img="poster" alt="Still from a 3D walkthrough"><span class="play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="#2B2723"/></svg></span></a>
+      <div><p class="eyebrow">Experience Centre</p><h2 id="he-h">Walk through your home before it's built.</h2><p class="lede">See materials in person and your design as a 3D walkthrough.</p><a class="tlink" href="#experience">Visit the Experience Centre</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- SERVICES -->
+<div class="view" id="v-services">
+  <section class="wrap phead">
+    <div><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Services</span></nav><h1>Services</h1></div>
+    <p class="lede">Six ways we help you build a home that lasts. Each one follows the same design-first process, with our own team on site.</p>
+  </section>
+  <div class="wrap svc-index" id="svcIndex"></div>
+  <div id="svcRows"></div>
+</div>
+
+<!-- PROJECTS -->
+<div class="view" id="v-projects">
+  <section class="wrap phead">
+    <div><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Projects</span></nav><h1>Projects</h1></div>
+    <p class="lede">A selection of homes we have designed. Open any project to see every room, or browse ideas room by room below.</p>
+  </section>
+  <section class="wrap block tight">
+    <div class="pgrid light" data-projects="heritage,duplex,pastel"></div>
+  </section>
+  <section class="wrap block tight" id="rooms" aria-labelledby="rooms-h">
+    <div class="sec-head">
+      <div><p class="eyebrow">Ideas by room</p><h2 id="rooms-h">Find ideas for each room</h2></div>
+      <div class="tabs" role="tablist" aria-label="Rooms" id="tabs"></div>
+    </div>
+    <div class="rgrid" id="rgrid" role="tabpanel" aria-labelledby="rooms-h"></div>
+  </section>
+</div>
+
+<!-- PROCESS -->
+<div class="view" id="v-process">
+  <section class="wrap phead">
+    <div><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Our Process</span></nav><h1>Our Process</h1></div>
+    <p class="lede">Five steps from first meeting to handover. You always know what happens next, who is doing it and what it costs.</p>
+  </section>
+  <section class="wrap block tight">
+    <ol class="steps">
+      <li><span class="n">1</span><b>Consultation</b><span>We visit, measure and listen: needs, style, budget and timeline.</span></li>
+      <li><span class="n">2</span><b>Design &amp; 3D</b><span>Layouts, photo-real 3D views and a walkthrough you see before we build.</span></li>
+      <li><span class="n">3</span><b>Materials &amp; quote</b><span>Choose finishes at the Experience Centre. Get a clear, itemised quote.</span></li>
+      <li><span class="n">4</span><b>Execution</b><span>Our own crew on site, with regular progress updates.</span></li>
+      <li><span class="n">5</span><b>Handover</b><span>Quality check, deep clean and keys, with after-care when you need it.</span></li>
+    </ol>
+  </section>
+  <section class="wrap block tight">
+    <div class="sec-head"><div><p class="eyebrow">What you receive</p><h2>At each stage</h2></div></div>
+    <ul class="list2">
+      <li><b>After consultation</b><span>A site measurement and a written summary of your brief.</span></li>
+      <li><b>After design</b><span>2D layouts, 3D views of every room and a walkthrough video.</span></li>
+      <li><b>Before work starts</b><span>An itemised quote and a week-by-week schedule.</span></li>
+      <li><b>During execution</b><span>Progress photos and site visits at agreed milestones.</span></li>
+    </ul>
+  </section>
+  <section class="wrap block tight" id="faq">
+    <div class="faq" style="margin-top:0">
+      <div style="display:flex; flex-direction:column; gap:14px"><p class="eyebrow">Questions</p><h3>Before you start</h3><p class="lede">Ask us anything else in your consultation.</p></div>
+      <div class="faq-list">
+        <details><summary>Do I see the design before work starts? <svg width="18" height="18" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Yes. You approve 2D layouts and 3D views of every room, and for full homes we prepare a walkthrough video.</p></details>
+        <details><summary>How long does a project take? <svg width="18" height="18" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>An apartment typically takes about 40 days. For an independent home, the timeline depends on the total square footage. Either way, we share a week-by-week schedule with your quote.</p></details>
+        <details><summary>How is pricing worked out? <svg width="18" height="18" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Every quote is itemised by room and material, so you can see what each choice costs and adjust before you sign.</p></details>
+        <details><summary>Do you offer a warranty? <svg width="18" height="18" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Yes, we offer a warranty of up to 10 years. The exact cover depends on the quality of the materials you choose, and we confirm it item by item in your quote.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- EXPERIENCE CENTRE -->
+<div class="view" id="v-experience">
+  <section class="wrap phead">
+    <div><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Experience Centre</span></nav><h1>Experience Centre</h1></div>
+    <p class="lede">Touch the laminates, veneers, hardware and stone before you choose, and see your design as a full 3D walkthrough on the big screen.</p>
+  </section>
+  <section class="wrap block tight">
+    <div class="vid" id="vid">
+      <img data-img="poster" alt="Still from a 3D walkthrough of an apartment">
+      <video playsinline controls preload="none" hidden></video>
+      <button class="play" aria-label="Play 3D walkthrough"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#2B2723"/></svg></button>
+      <span class="vid-cap">3D walkthrough · The Pastel Family Home</span>
+    </div>
+  </section>
+  <section class="wrap block tight">
+    <div class="sec-head"><div><p class="eyebrow">At the centre</p><h2>What you can see and try</h2></div></div>
+    <ul class="list2">
+      <li><b>Laminates &amp; veneers</b><span>Finishes for wardrobes, kitchens and panelling.</span></li>
+      <li><b>Kitchen hardware</b><span>Hinges, channels, baskets and corner units.</span></li>
+      <li><b>Stone &amp; counters</b><span>Granite, quartz and marble samples.</span></li>
+      <li><b>Lighting</b><span>Profile lights, cove lighting and pendants.</span></li>
+      <li><b>3D walkthrough</b><span>Your own design on the big screen.</span></li>
+      <li><b>Design team</b><span>Talk through changes with your designer.</span></li>
+    </ul>
+  </section>
+  <section class="exp bleed">
+    <div class="wrap teaser">
+      <div class="map" style="flex-direction:column; gap:16px; border-style:solid"><svg width="32" height="32" aria-hidden="true"><use href="#i-pin"/></svg><span style="font-family:var(--f-display); font-size:26px; color:var(--ink)">Fortius Waterscape Apartment</span><span>Medahalli, Bangalore 560049</span><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Fortius+Waterscape+Apartment+Medahalli+Bangalore+560049" target="_blank" rel="noopener">Open in Google Maps</a></div>
+      <div><p class="eyebrow">Visit us</p><h2>Plan your visit</h2>
+        <dl class="addr"><dt>Address</dt><dd>Fortius Waterscape Apartment, Medahalli, Bangalore 560049</dd><dt>Hours</dt><dd>[e.g. Mon to Sat, 10am to 7pm]</dd><dt>Phone</dt><dd>+91 74060 61330</dd></dl>
+        <a class="btn btn-primary" href="#consult" data-type="Experience" style="align-self:flex-start">Book a visit</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- BLOG -->
+<div class="view" id="v-blog">
+  <section class="wrap phead">
+    <div><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Blog</span></nav><h1>Journal</h1></div>
+    <p class="lede">Practical ideas for planning your home, from pooja units to kitchen layouts.</p>
+  </section>
+  <section class="wrap block tight"><div class="bgrid" id="bgrid"></div></section>
+</div>
+
+<!-- CONSULT -->
+<div class="view" id="v-consult">
+  <section class="consult dark bleed" aria-labelledby="c-h">
+    <div class="wrap cgrid">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb" style="color:var(--on-dark-2)"><a href="#home">Home</a><span>/</span><span>Book Consultation</span></nav>
+        <h1 id="c-h" style="font-size:clamp(44px, 6vw, 76px)">Let's talk about your home.</h1>
+        <p class="lede">Share a few details and we'll call you back to set up a free design consultation.</p>
+        <div class="contacts">
+          <div><svg width="18" height="18" aria-hidden="true"><use href="#i-phone"/></svg><span>+91 74060 61330</span></div>
+          <div><svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg><span>WhatsApp: +91 74060 61330</span></div>
+          <div><svg width="18" height="18" aria-hidden="true"><use href="#i-pin"/></svg><span>Fortius Waterscape Apartment, Medahalli, Bangalore 560049 · <a href="https://www.google.com/maps/search/?api=1&amp;query=Fortius+Waterscape+Apartment+Medahalli+Bangalore+560049" target="_blank" rel="noopener" style="text-decoration:underline">Map</a></span></div>
+        </div>
+      </div>
+      <form id="form" novalidate>
+        <div class="f"><label for="c-name">Name</label><input id="c-name" name="name" autocomplete="name" required><span class="err" id="e-name"></span></div>
+        <div class="f"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile" required><span class="err" id="e-phone"></span></div>
+        <div class="f full"><label for="c-type">Service</label>
+          <select id="c-type" name="type"><option>Home Interiors</option><option>Modular Kitchens &amp; Wardrobes</option><option>Living Room &amp; Bedroom Design</option><option>Renovation &amp; Remodelling</option><option>Custom Furniture</option><option>3D Design &amp; Space Planning</option><option>Experience Centre visit</option></select></div>
+        <div class="f full" role="group" aria-labelledby="sz-l"><label id="sz-l">Home size</label>
+          <div class="seg">
+            <label><input type="radio" name="size" id="sz-2" value="2 BHK"><span>2 BHK</span></label>
+            <label><input type="radio" name="size" id="sz-3" value="3 BHK" checked><span>3 BHK</span></label>
+            <label><input type="radio" name="size" id="sz-4" value="4 BHK +"><span>4 BHK +</span></label>
+            <label><input type="radio" name="size" id="sz-v" value="Villa"><span>Villa</span></label>
+          </div></div>
+        <div class="f full"><label for="c-loc">Location</label><input id="c-loc" name="loc" autocomplete="address-level2" placeholder="Area, city"></div>
+        <button class="btn btn-light" type="submit">Request a call back</button>
+        <p class="note" style="grid-column:1 / -1">Prototype: this form checks your entries but does not send them anywhere yet.</p>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- PROJECT and POST (rendered) -->
+<div class="view" id="v-project"></div>
+<div class="view" id="v-post"></div>
+
+<section class="cta-band dark bleed" id="ctaBand">
+  <div class="wrap"><h2>Ready to plan your home?</h2><div class="row"><a class="btn btn-light" href="#consult">Book a free consultation</a><a class="btn btn-ghost" href="#experience">Visit the Experience Centre</a></div></div>
+</section>
+</main>
+
+<footer class="bleed">
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a href="#home" class="logo" aria-label="Syethugriha home"><img data-img="mark" alt="" width="62" height="50"><span class="wm"><b>Syethugriha</b><small>A foundation for generation</small></span></a><span style="color:var(--stone); font-size:14px; line-height:1.6">Syeaura Interior &amp; Construction<br>Fortius Waterscape Apartment,<br>Medahalli, Bangalore 560049</span></div>
+      <nav aria-label="Services" id="footSvc"><span class="k">Services</span></nav>
+      <nav aria-label="Company"><span class="k">Company</span><a href="#projects">Projects</a><a href="#process">Our Process</a><a href="#experience">Experience Centre</a><a href="#blog">Blog</a><a href="#consult">Book Consultation</a></nav>
+      <div><span class="k">Contact</span><span>+91 74060 61330</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Fortius+Waterscape+Apartment+Medahalli+Bangalore+560049" target="_blank" rel="noopener">Find us on Google Maps</a><span>[email]</span><span>Instagram · Facebook · YouTube</span></div>
+    </div>
+    <div class="fbot"><span>© 2026 Syethugriha · Syeaura Interior &amp; Construction. All rights reserved.</span><span>A foundation for generation.</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="#consult" aria-label="Chat on WhatsApp"><svg width="26" height="26" aria-hidden="true"><use href="#i-chat"/></svg></a>
+
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <div class="lb-in">
+    <img id="lbImg" alt="">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><svg width="20" height="20" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo"><svg class="arrow" aria-hidden="true"><use href="#i-left"/></svg></button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo"><svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <div class="lb-cap" id="lbCap"></div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const IMG = {"logo": "images/logo.jpg", "mark": "images/mark.jpg", "p1-1": "images/p1-1.jpg", "p1-2": "images/p1-2.jpg", "p1-3": "images/p1-3.jpg", "p1-4": "images/p1-4.jpg", "p1-5": "images/p1-5.jpg", "p1-6": "images/p1-6.jpg", "p2-1": "images/p2-1.jpg", "p2-10": "images/p2-10.jpg", "p2-11": "images/p2-11.jpg", "p2-12": "images/p2-12.jpg", "p2-2": "images/p2-2.jpg", "p2-3": "images/p2-3.jpg", "p2-4": "images/p2-4.jpg", "p2-5": "images/p2-5.jpg", "p2-6": "images/p2-6.jpg", "p2-7": "images/p2-7.jpg", "p2-8": "images/p2-8.jpg", "p2-9": "images/p2-9.jpg", "p3-1": "images/p3-1.jpg", "p3-2": "images/p3-2.jpg", "p3-3": "images/p3-3.jpg", "p3-4": "images/p3-4.jpg", "p3-5": "images/p3-5.jpg", "p3-6": "images/p3-6.jpg", "p3-7": "images/p3-7.jpg", "p3-8": "images/p3-8.jpg", "p3-9": "images/p3-9.jpg", "poster": "images/poster.jpg"};
+const VIDEO = "video/walk.mp4";
+
+const PROJECTS = {
+  duplex: { name:"The Contemporary Duplex", cat:"villas", meta:"Villa · Elevation & planning · [Location]",
+    facts:[["Type","Villa"],["Scope","Elevation & planning"],["Location","[Location]"],["Year","[Year]"]],
+    cover:"p1-2", hero:"p1-4",
+    intro:"A two-storey home with a bold white frame, timber-clad accents and a jaali screen that filters light into the stairwell.",
+    body:["[Client brief: plot size, family, what they asked for.]","[Design moves: cantilevered balcony frame, vertical fins, wraparound terrace, landscaped boundary wall.]"],
+    imgs:["p1-1","p1-2","p1-3","p1-4","p1-5","p1-6"] },
+  heritage: { name:"The Heritage Home", cat:"apartments", meta:"Apartment · 3 BHK · [Location]",
+    facts:[["Type","Apartment"],["Size","3 BHK"],["Location","[Location]"],["Scope","Full interiors"]],
+    cover:"p2-5", hero:"p2-9",
+    intro:"Brass swings, carved pillars and cane-front storage. A traditional home language, drawn into a modern apartment.",
+    body:["[Client brief in two or three lines: who lives here, what they wanted.]","[Key moves: foyer swing and pillar, marble pooja unit with brass bells, cane storage, sports-themed kids' room, sage-grey kitchen.]"],
+    imgs:["p2-9","p2-5","p2-4","p2-7","p2-8","p2-10","p2-11","p2-2","p2-3","p2-12","p2-1","p2-6"] },
+  pastel: { name:"The Pastel Family Home", cat:"apartments", meta:"Apartment · Full interiors · [Location]",
+    facts:[["Type","Apartment"],["Size","[BHK]"],["Location","[Location]"],["Scope","Full interiors"]],
+    cover:"p3-6", hero:"p3-5", video:true,
+    intro:"Sage, blush and warm timber. A light-filled family home with a marble island kitchen and two playful kids' rooms.",
+    body:["[Client brief: family, lifestyle, what they asked for.]","[Key moves: open kitchen with island seating, carved partition screen, tropical wallpaper bedroom, scalloped headboards.]"],
+    imgs:["p3-5","p3-6","p3-1","p3-2","p3-7","p3-3","p3-4","p3-8","p3-9"] }
+};
+const ORDER = ["heritage","duplex","pastel"];
+
+const ROOMS = [
+  {id:"all", label:"All"},
+  {id:"kitchen", label:"Kitchens", imgs:[["p3-8","Island kitchen"],["p2-10","Parallel kitchen"],["p2-11","Crockery unit"],["p3-9","L-shaped kitchen"],["p3-5","Dining"]]},
+  {id:"living", label:"Living", imgs:[["p2-9","Living room"],["p3-6","Living room"],["p3-1","TV wall"],["p2-2","Feature wall"]]},
+  {id:"bedroom", label:"Bedrooms", imgs:[["p3-2","Master bedroom"],["p2-8","Bedroom"],["p3-7","Guest bedroom"]]},
+  {id:"pooja", label:"Pooja & foyer", imgs:[["p2-7","Pooja unit"],["p2-5","Foyer swing"],["p2-4","Entrance"]]},
+  {id:"kids", label:"Kids", imgs:[["p3-4","Girl's room"],["p3-3","Kids' bedroom"],["p2-3","Daybed"]]},
+  {id:"study", label:"Study", imgs:[["p2-12","Home office"]]}
+];
+ROOMS[0].imgs = [ROOMS[1].imgs[0], ROOMS[2].imgs[0], ROOMS[4].imgs[0], ROOMS[3].imgs[0], ROOMS[5].imgs[0]];
+
+const POSTS = {
+  "post-pooja": {k:"Pooja rooms", img:"p2-7", t:"Designing a pooja unit for a compact apartment",
+    p:["A pooja corner needs only a metre of wall. Back it with stone or marble, light it from above, and keep a heat-safe surface where the lamp sits.",
+       "Floating shelves on either side hold idols and brass without crowding the centre. Drawers below keep diyas, incense and pooja items out of sight."],
+    h:"Details that make a difference", p2:["Hang brass bells from the top panel, not the wall, so they ring freely.","[Full article to be written by Syethugriha.]"], ex:"p2-4"},
+  "post-kitchen": {k:"Kitchens", img:"p3-8", t:"Island, parallel or L-shape: choosing your kitchen layout",
+    p:["Start with how you cook, then measure. An island needs clear walking space on every side. A parallel kitchen suits narrow rooms. An L-shape gives the longest counter in a corner."],
+    h:"Questions to ask first", p2:["How many people cook at once? Where does the fridge go? Do you need a separate wet area for heavy cooking?","[Full article to be written by Syethugriha.]"], ex:"p2-10"},
+  "post-villa": {k:"Villas", img:"p1-6", t:"What a good elevation design gets right",
+    p:["A strong elevation has one clear idea, such as a frame, a material change or a screen, and it repeats that idea instead of adding more."],
+    h:"Plan for weather and upkeep", p2:["Deep projections shade windows and keep rain off walls. Choose cladding you can clean and maintain.","[Full article to be written by Syethugriha.]"], ex:"p1-3"}
+};
+const POST_ORDER = ["post-pooja","post-kitchen","post-villa"];
+
+const SERVICES = [
+  {id:"s-interiors", t:"Home Interiors", img:"p2-9", short:"Complete interiors for apartments and villas, designed and built by one team.",
+   d:"From the foyer to the balcony, we plan every room together so the whole home feels like one design. You get one point of contact, one schedule and one quote.",
+   inc:["Full-home design concept","False ceilings and lighting","Pooja units and foyers","Kids' rooms and study areas"],
+   ex:[["p2-9","Living room"],["p2-5","Foyer"],["p2-7","Pooja unit"],["p3-4","Kids' room"]]},
+  {id:"s-kitchens", t:"Modular Kitchens & Wardrobes", img:"p3-8", short:"Kitchens and wardrobes made to measure, with hardware that lasts.",
+   d:"We design kitchens around how your family cooks, and wardrobes around what you store. Island, parallel, L- or U-shape; hinged, sliding or walk-in.",
+   inc:["Layout and appliance planning","Shutters in laminate, acrylic or PU","Soft-close hardware and accessories","Loft, crockery and tall units"],
+   ex:[["p3-8","Island kitchen"],["p2-10","Parallel kitchen"],["p3-9","L-shaped kitchen"],["p3-7","Wardrobe"]]},
+  {id:"s-living", t:"Living Room & Bedroom Design", img:"p3-2", short:"Calm, comfortable rooms with storage built in.",
+   d:"TV walls, display units, headboards and bedside storage designed as one piece, with lighting and soft furnishings that bring the room together.",
+   inc:["TV and display walls","Headboards and bed back panels","Wallpaper and feature walls","Lighting and soft furnishing advice"],
+   ex:[["p3-2","Master bedroom"],["p3-6","Living room"],["p3-1","TV wall"],["p2-8","Bedroom"]]},
+  {id:"s-renovation", t:"Renovation & Remodelling", img:"p2-2", short:"Refresh one room or remodel the whole house.",
+   d:"We plan renovation work so you can live around it, and we finish what we start. Kitchens, bathrooms, ceilings, flooring and feature walls.",
+   inc:["Kitchen and bathroom remodels","Flooring and tiling","Ceiling and electrical upgrades","Panelling and wall finishes"],
+   ex:[["p2-2","Feature wall"],["p2-10","Kitchen"],["p3-1","Living wall"]]},
+  {id:"s-furniture", t:"Custom Furniture", img:"p2-11", short:"Pieces made for your space, in the finish you choose.",
+   d:"Crockery units, swings, daybeds, study desks and cabinets designed to fit your room exactly and built in our own workshop.",
+   inc:["Crockery and display units","Pooja units and swings","Daybeds and study desks","Shoe racks and console units"],
+   ex:[["p2-11","Crockery unit"],["p2-5","Swing"],["p2-3","Daybed"],["p2-12","Study desk"]]},
+  {id:"s-3d", t:"3D Design & Space Planning", img:"poster", short:"See every room in 3D before work begins.",
+   d:"We measure your home, plan the layout and create photo-real 3D views and a walkthrough video, so you approve the design with confidence.",
+   inc:["Site measurement","2D layouts and furniture plans","Photo-real 3D views","Walkthrough video"],
+   ex:[["p1-2","3D exterior view"],["p1-4","3D exterior view"],["p3-5","3D interior view"],["p3-6","3D interior view"]], video:true}
+];
+
+const ROUTES = ["home","services","projects","process","experience","blog","consult"];
+const NAV_OF = {duplex:"projects", heritage:"projects", pastel:"projects", "post-pooja":"blog", "post-kitchen":"blog", "post-villa":"blog"};
+const TITLES = {home:"Syethugriha", services:"Services", projects:"Projects", process:"Our Process", experience:"Experience Centre", blog:"Journal", consult:"Book Consultation"};
+
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const el = (tag, attrs={}, html="") => { const e=document.createElement(tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (html) e.innerHTML = html; return e; };
+const src = id => IMG[id] || "";
+const arrow = '<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>';
+const playSvg = '<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#2B2723"/></svg>';
+function fillImgs(root=document){ $$("img[data-img]", root).forEach(i => { if (!i.getAttribute("src")) i.src = src(i.dataset.img); }); }
+
+/* ---------- Router ---------- */
+let current = null;
+function go(route, opts={}){
+  if (!ROUTES.includes(route) && !PROJECTS[route] && !POSTS[route]) route = "home";
+  $$(".view").forEach(v => v.classList.remove("on"));
+  $$("video").forEach(v => v.pause());
+  let view;
+  if (PROJECTS[route]) { renderProject(route); view = $("#v-project"); }
+  else if (POSTS[route]) { renderPost(route); view = $("#v-post"); }
+  else view = $("#v-" + route);
+  view.classList.add("on");
+  current = route;
+  const nav = NAV_OF[route] || route;
+  $$("[data-nav]").forEach(a => { if (a.dataset.nav === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  $("#ctaBand").hidden = (route === "consult");
+  document.title = (PROJECTS[route]?.name || POSTS[route]?.t || TITLES[route]) + (route==="home" ? "" : " · Syethugriha");
+  if (route === "home") restart(); else clearInterval(auto);
+  if (!opts.noPush) { try { history.pushState({route}, "", "#" + route); } catch(e){} }
+  closeDrops(); drawer(false);
+  if (opts.scroll) { const t = document.getElementById(opts.scroll); if (t) { requestAnimationFrame(() => t.scrollIntoView({behavior:"smooth"})); return; } }
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  const route = a.getAttribute("href").slice(1);
+  if (!(ROUTES.includes(route) || PROJECTS[route] || POSTS[route])) return;
+  e.preventDefault();
+  if (a.dataset.type) presetType(a.dataset.type);
+  go(route, {scroll: a.dataset.scroll});
+});
+window.addEventListener("popstate", e => go(e.state?.route || (location.hash||"#home").slice(1), {noPush:true}));
+function presetType(t){ const s=$("#c-type"); if (!s) return; [...s.options].forEach(o => { if (o.text.toLowerCase().startsWith(t.toLowerCase().slice(0,5))) s.value = o.text; }); }
+
+/* ---------- Header ---------- */
+function closeDrops(){ const a=document.activeElement; if (a && a.closest && a.closest(".nav")) a.blur(); }
+function drawer(v){ document.body.classList.toggle("drawer-open", v); document.body.classList.toggle("locked", v); $("#drawer").setAttribute("aria-hidden", !v); $("#burger").setAttribute("aria-expanded", v); if (v) $("#dclose").focus(); }
+$("#burger").onclick = () => drawer(true);
+$("#dclose").onclick = () => drawer(false);
+$("#scrim").onclick = () => drawer(false);
+$$(".drow > button").forEach(b => b.onclick = () => { const li=b.closest("li"), v=!li.classList.contains("open"); li.classList.toggle("open", v); b.setAttribute("aria-expanded", v); });
+document.addEventListener("keydown", e => { if (e.key==="Escape" && document.body.classList.contains("drawer-open")) drawer(false); });
+
+/* ---------- Hero ---------- */
+const slides = $$(".slide"), dots = $$(".dots button");
+const caps = [["The Pastel Family Home","pastel"],["The Heritage Home","heritage"],["The Contemporary Duplex","duplex"]];
+let cur = 0, auto;
+function show(i){ cur=i; slides.forEach((s,j)=>s.classList.toggle("on", j===i)); dots.forEach((d,j)=>d.setAttribute("aria-current", j===i)); $("#heroCap").textContent = caps[i][0]; $("#heroCap").setAttribute("href", "#"+caps[i][1]); }
+dots.forEach((d,i) => d.onclick = () => { show(i); restart(); });
+function restart(){ clearInterval(auto); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) auto = setInterval(() => show((cur+1)%slides.length), 6000); }
+
+/* ---------- Project cards ---------- */
+function card(id){
+  const p = PROJECTS[id];
+  return `<a class="pcard" href="#${id}"><div class="ph"><img src="${src(p.cover)}" alt=""><span class="count">${p.imgs.length} photos${p.video?" · video":""}</span></div><span class="pmeta">${p.meta}</span><h3>${p.name}</h3><p class="lede">${p.intro}</p><span class="pview">View project ${arrow}</span></a>`;
+}
+$$("[data-projects]").forEach(g => g.innerHTML = g.dataset.projects.split(",").map(card).join(""));
+
+/* ---------- Galleries ---------- */
+$$("[data-gallery]").forEach(g => {
+  const items = g.dataset.gallery.split(",").map(s => s.split(":"));
+  items.forEach(([im, cap], k) => { const b=el("button",{"aria-label":`Enlarge: ${cap}`}, `<img src="${src(im)}" alt=""><span class="tag">${cap}</span>`); b.onclick=()=>openLB(items, k); g.append(b); });
+});
+
+let room = "all";
+function renderTabs(){ const t=$("#tabs"); t.innerHTML=""; ROOMS.forEach(r => { const b=el("button",{class:"tab", role:"tab", "aria-selected": r.id===room, id:"tab-"+r.id}, r.label); b.onclick=()=>setRoom(r.id); t.append(b); }); }
+function setRoom(id){ room=id; renderTabs(); renderRooms(); }
+function renderRooms(){ const r=ROOMS.find(x=>x.id===room), g=$("#rgrid"); g.innerHTML=""; r.imgs.forEach(([im, cap], k) => { const b=el("button",{"aria-label":`Enlarge: ${cap}`}, `<img src="${src(im)}" alt=""><span class="tag">${cap}</span>`); b.onclick=()=>openLB(r.imgs, k); g.append(b); }); }
+$("#tabs").addEventListener("keydown", e => { if (!["ArrowLeft","ArrowRight"].includes(e.key)) return; const i=ROOMS.findIndex(x=>x.id===room), n=(i+(e.key==="ArrowRight"?1:-1)+ROOMS.length)%ROOMS.length; setRoom(ROOMS[n].id); $("#tab-"+ROOMS[n].id).focus(); });
+
+/* ---------- Project page ---------- */
+function renderProject(id){
+  const p = PROJECTS[id], i = ORDER.indexOf(id), prev = ORDER[(i-1+ORDER.length)%ORDER.length], next = ORDER[(i+1)%ORDER.length];
+  const section = ["projects","Projects"];
+  const v = $("#v-project");
+  v.innerHTML = `
+  <section class="wrap phead">
+    <div><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><a href="#${section[0]}">${section[1]}</a><span>/</span><span>${p.name}</span></nav><h1>${p.name}</h1></div>
+    <dl class="facts">${p.facts.map(f=>`<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join("")}</dl>
+  </section>
+  <div class="wrap"><button class="lhero" data-lb="${p.hero}" aria-label="Enlarge photo"><img src="${src(p.hero)}" alt="${p.name}"></button></div>
+  <section class="wrap lintro"><h2>${p.intro}</h2><div>${p.body.map(t=>`<p class="lede">${t}</p>`).join("")}</div></section>
+  ${p.video ? `<div class="wrap" style="margin-bottom:14px"><div class="vid" id="pvid"><img src="${src("poster")}" alt="Still from the 3D walkthrough"><video playsinline controls preload="none" hidden></video><button class="play" aria-label="Play 3D walkthrough">${playSvg}</button><span class="vid-cap">3D walkthrough</span></div></div>` : ""}
+  <div class="wrap"><div class="lgal">${p.imgs.map((im,k)=>`<button data-lb="${im}" aria-label="Enlarge photo ${k+1} of ${p.imgs.length}"><img src="${src(im)}" alt=""></button>`).join("")}</div></div>
+  <div class="wrap lnext">
+    <a href="#${prev}" style="display:flex; flex-direction:column; gap:4px"><span class="k" style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass)">Previous project</span><span style="font-family:var(--f-display); font-size:30px">${PROJECTS[prev].name}</span></a>
+    <a href="#${next}" style="display:flex; flex-direction:column; gap:4px; text-align:right"><span style="font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass)">Next project</span><span style="font-family:var(--f-display); font-size:30px">${PROJECTS[next].name}</span></a>
+  </div>`;
+  const gal = p.imgs.map(x => [x, p.name]);
+  $$("[data-lb]", v).forEach(b => b.onclick = () => openLB(gal, Math.max(0, p.imgs.indexOf(b.dataset.lb))));
+  const pv = $("#pvid", v); if (pv) wireVideo(pv);
+}
+
+/* ---------- Blog ---------- */
+$("#bgrid").innerHTML = POST_ORDER.map(id => { const p=POSTS[id]; return `<a class="bcard" href="#${id}"><div class="ph"><img src="${src(p.img)}" alt=""></div><span class="k">${p.k}</span><h3>${p.t}</h3></a>`; }).join("");
+function renderPost(id){
+  const p = POSTS[id], others = POST_ORDER.filter(x => x!==id);
+  $("#v-post").innerHTML = `
+  <article class="wrap article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><a href="#blog">Blog</a><span>/</span><span>${p.k}</span></nav>
+    <p class="eyebrow">${p.k}</p><h1>${p.t}</h1>
+    <img src="${src(p.img)}" alt="">
+    ${p.p.map(t=>`<p class="lede">${t}</p>`).join("")}
+    <h2>${p.h}</h2>
+    <img src="${src(p.ex)}" alt="">
+    ${p.p2.map(t=>`<p class="lede">${t}</p>`).join("")}
+    <a class="tlink" href="#blog">Back to the journal</a>
+  </article>
+  <section class="wrap block tight"><div class="sec-head"><div><p class="eyebrow">Read next</p><h2>More from the journal</h2></div></div>
+    <div class="bgrid">${others.map(o => `<a class="bcard" href="#${o}"><div class="ph"><img src="${src(POSTS[o].img)}" alt=""></div><span class="k">${POSTS[o].k}</span><h3>${POSTS[o].t}</h3></a>`).join("")}</div></section>`;
+}
+
+/* ---------- Lightbox ---------- */
+let lbList = [], lbI = 0;
+function openLB(list, i){ lbList=list; lbI=i; drawLB(); const d=$("#lb"); if (!d.open) d.showModal(); }
+function drawLB(){ const [id, cap] = lbList[lbI]; $("#lbImg").src = src(id); $("#lbImg").alt = cap; $("#lbCap").textContent = `${cap} · ${lbI+1} / ${lbList.length}`; }
+$("#lbClose").onclick = () => $("#lb").close();
+$("#lbPrev").onclick = () => { lbI=(lbI-1+lbList.length)%lbList.length; drawLB(); };
+$("#lbNext").onclick = () => { lbI=(lbI+1)%lbList.length; drawLB(); };
+$("#lb").addEventListener("keydown", e => { if (e.key==="ArrowLeft") $("#lbPrev").click(); if (e.key==="ArrowRight") $("#lbNext").click(); });
+$("#lb").addEventListener("click", e => { if (e.target.classList.contains("lb-in")) $("#lb").close(); });
+let tx=null; $("#lb").addEventListener("touchstart", e => tx=e.touches[0].clientX, {passive:true});
+$("#lb").addEventListener("touchend", e => { if (tx===null) return; const dx=e.changedTouches[0].clientX-tx; if (Math.abs(dx)>50) (dx>0?$("#lbPrev"):$("#lbNext")).click(); tx=null; });
+
+/* ---------- Video ---------- */
+function wireVideo(box){ const v=$("video", box), b=$(".play", box); b.onclick = () => { if (!v.src) v.src = VIDEO; v.hidden=false; box.classList.add("playing"); v.play().catch(()=>{}); }; }
+wireVideo($("#vid"));
+
+/* ---------- Form ---------- */
+let FORM_HTML = "";
+$("#form").addEventListener("submit", e => {
+  e.preventDefault();
+  const name=$("#c-name"), phone=$("#c-phone"); let ok=true;
+  const digits = phone.value.replace(/\D/g,"").replace(/^91(?=\d{10}$)/,"");
+  if (!name.value.trim()) { $("#e-name").textContent="Enter your name so we know who to ask for."; name.setAttribute("aria-invalid","true"); ok=false; } else { $("#e-name").textContent=""; name.removeAttribute("aria-invalid"); }
+  if (!/^[6-9]\d{9}$/.test(digits)) { $("#e-phone").textContent="Enter a 10-digit Indian mobile number."; phone.setAttribute("aria-invalid","true"); ok=false; } else { $("#e-phone").textContent=""; phone.removeAttribute("aria-invalid"); }
+  if (!ok) { (name.getAttribute("aria-invalid") ? name : phone).focus(); return; }
+  const size = $("input[name=size]:checked")?.value || "";
+  const type = $("#c-type").value.toLowerCase();
+  const first = name.value.trim().split(" ")[0].replace(/[<>&"]/g,"");
+  const f=$("#form"); FORM_HTML = FORM_HTML || f.innerHTML;
+  f.innerHTML = `<div class="done" tabindex="-1"><p class="eyebrow">Request received</p><h3>Thank you, ${first}.</h3><p class="lede">On the live site, the Syethugriha team would call you on ${digits.slice(0,5)} ${digits.slice(5)} about ${type} for your ${size} home.</p><p class="note">Prototype: nothing was sent.</p><button class="btn btn-ghost" type="button" id="again" style="align-self:flex-start">Start again</button></div>`;
+  $(".done", f).focus(); $("#again").onclick = () => { f.innerHTML = FORM_HTML; $("#c-name").focus(); };
+});
+
+/* ---------- Services ---------- */
+$("#svcDrop").innerHTML = SERVICES.map(v => `<li><a href="#services" data-scroll="${v.id}">${v.t}</a></li>`).join("");
+$("#svcDsub").innerHTML = SERVICES.map(v => `<li><a href="#services" data-scroll="${v.id}">${v.t}</a></li>`).join("");
+$("#projDrop").innerHTML = `<li><a href="#projects">All projects<small>Every sample project</small></a></li>` + ORDER.map(id => `<li><a href="#${id}">${PROJECTS[id].name}<small>${PROJECTS[id].meta.split(" · ").slice(0,2).join(" · ")}</small></a></li>`).join("") + `<li><a href="#projects" data-scroll="rooms">Ideas by room<small>Kitchens, bedrooms, pooja and more</small></a></li>`;
+$("#projDsub").innerHTML = ORDER.map(id => `<li><a href="#${id}">${PROJECTS[id].name}</a></li>`).join("") + `<li><a href="#projects" data-scroll="rooms">Ideas by room</a></li>`;
+$("#footSvc").insertAdjacentHTML("beforeend", SERVICES.map(v => `<a href="#services" data-scroll="${v.id}">${v.t}</a>`).join(""));
+$("#homeSvc").innerHTML = SERVICES.map(v => `<a class="svc" href="#services" data-scroll="${v.id}"><div class="ph"><img src="${src(v.img)}" alt=""></div><h3>${v.t}</h3><p>${v.short}</p></a>`).join("");
+$("#svcIndex").innerHTML = SERVICES.map(v => `<a href="#services" data-scroll="${v.id}">${v.t}</a>`).join("");
+$("#svcRows").innerHTML = SERVICES.map((v,i) => `
+  <section class="svc-row bleed${i%2 ? " alt" : ""}" id="${v.id}">
+    <div class="wrap">
+      <div class="ph"><img src="${src(v.img)}" alt="${v.t}"></div>
+      <div class="txt">
+        <h2>${v.t}</h2>
+        <p class="lede">${v.d}</p>
+        <ul class="inc">${v.inc.map(x => `<li>${x}</li>`).join("")}</ul>
+        <div class="row">
+          <button class="btn btn-ghost-dk" data-ex="${i}" type="button">See examples (${v.ex.length})</button>
+          ${v.video ? `<a class="btn btn-ghost-dk" href="#experience">Watch a walkthrough</a>` : ""}
+          <a class="btn btn-primary" href="#consult" data-type="${v.t}">Enquire</a>
+        </div>
+      </div>
+    </div>
+  </section>`).join("");
+$$("[data-ex]").forEach(b => b.onclick = () => openLB(SERVICES[+b.dataset.ex].ex, 0));
+
+/* ---------- Init ---------- */
+fillImgs(); renderTabs(); renderRooms();
+go((location.hash || "#home").slice(1) || "home", {noPush:true});
+try { history.replaceState({route: current}, "", "#" + current); } catch(e){}
+</script>
+
+</html>
