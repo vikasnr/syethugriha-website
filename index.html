@@ -675,6 +675,24 @@ a.ccard:hover{border-color:var(--ink)}
   </section>
 </div>
 
+<!-- CREDITS (hidden: only reachable at #credits, not linked anywhere) -->
+<div class="view" id="v-credits">
+  <section class="wrap phead">
+    <div><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Credits</span></nav><h1>Credits</h1></div>
+    <p class="lede">You found the back room. Thanks for looking behind the walls.</p>
+  </section>
+  <section class="wrap block tight">
+    <ul class="list2">
+      <li><b>Design &amp; development</b><span>Vikas · <a href="https://github.com/vikasnr" target="_blank" rel="noopener" style="text-decoration:underline">github.com/vikasnr</a></span></li>
+      <li><b>Built for</b><span>Syethugriha · Syeaura Interior &amp; Construction, Bangalore</span></li>
+      <li><b>Photography &amp; 3D renders</b><span>Syethugriha project archive</span></li>
+      <li><b>Made with</b><span>Hand-written HTML, CSS and JavaScript · Cormorant Garamond &amp; Jost · Hosted on GitHub Pages</span></li>
+    </ul>
+    <p class="lede" style="margin-top:40px">2026 · Built with care in Bangalore.</p>
+    <a class="tlink" href="#home" style="margin-top:20px; display:inline-block">Back to the website</a>
+  </section>
+</div>
+
 <!-- PROJECT and POST (rendered) -->
 <div class="view" id="v-project"></div>
 <div class="view" id="v-post"></div>
@@ -787,9 +805,9 @@ const SERVICES = [
    ex:[["p1-2","3D exterior view"],["p1-4","3D exterior view"],["p3-5","3D interior view"],["p3-6","3D interior view"]], video:true}
 ];
 
-const ROUTES = ["home","services","projects","process","experience","blog","contact"];
+const ROUTES = ["home","services","projects","process","experience","blog","contact","credits"];
 const NAV_OF = {duplex:"projects", heritage:"projects", pastel:"projects", "post-pooja":"blog", "post-kitchen":"blog", "post-villa":"blog"};
-const TITLES = {home:"Syethugriha", services:"Services", projects:"Projects", process:"Our Process", experience:"Experience Centre", blog:"Journal", contact:"Contact"};
+const TITLES = {home:"Syethugriha", services:"Services", projects:"Projects", process:"Our Process", experience:"Experience Centre", blog:"Journal", contact:"Contact", credits:"Credits"};
 
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
